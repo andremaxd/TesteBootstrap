@@ -53,7 +53,7 @@
             </li>
           </ul>
           <span class="navbar-brand" style="float: right"><?php echo $_SESSION['usuarioNome'] ?> 
-            <a href="sair.php"><i class='fas fa-power-off' style='font-size:24px'></i></a>
+            <a href="<?php echo BASEURL; ?>sair.php"><i class='fas fa-power-off' style='font-size:24px'></i></a>
           </span>
          
         </div><!--/.navbar-collapse -->

@@ -1,10 +1,10 @@
 <?php
-	//Inicializado primeira a sessão para posteriormente recuperar valores das variáveis globais. 
-    session_start();
+//Inicializado primeira a sessão para posteriormente recuperar valores das variáveis globais.
+session_start();
 ?>
 
-<?php require_once 'config.php'; ?>
-<?php require_once DBAPI; ?>
+<?php require_once 'config.php';?>
+<?php require_once DBAPI;?>
 
 
 <!DOCTYPE html>
@@ -30,46 +30,46 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-         <h1 class="text-warning" text-align="center">Acesso ao Sistema de Gestão de Tarefas</h1>
+        <h1 class="text-warning" style="color: #e1e3e6" >Acesso ao Sistema de Gestão de Tarefas</h1>
         </div>
       </div>
     </nav>
 
+		<div class="container" style="padding: 60px">
 
-<!-- Criado o formulário para o usuário colocar os dados de acesso.  -->
-		<form method="POST" action="valida.php">
-            <h2>Área Restrita</h2>
-            <label>Email</label>
-            <input type="email" name="email" placeholder="Email" required autofocus>
-            <label>Senha</label>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <button type="submit">Acessar</button>
-        </form>
-        <p>
-            <?php 
-			//Recuperando o valor da variável global, os erro de login.
-			if(isset($_SESSION['loginErro'])){
+          <form method="POST" action="valida.php">
+          
+          <h2>Identifique-se para acesso:</h2>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Informe seu email">
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha:</label>
+              <input type="password" name="senha" class="form-control" id="senha" placeholder="Informe sua senha">
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </form>
+
+          <p>
+            <?php
+            //Recuperando o valor da variável global, os erro de login.
+            if (isset($_SESSION['loginErro'])) {
                 echo $_SESSION['loginErro'];
                 unset($_SESSION['loginErro']);
             }?>
         </p>
+
         <p>
-            <?php 
-			//Recuperando o valor da variável global, deslogado com sucesso.
-            if(isset($_SESSION['logindeslogado'])){
-                echo $_SESSION['logindeslogado'];
-                unset($_SESSION['logindeslogado']);
-            }
-            ?>
+            <?php
+              //Recuperando o valor da variável global, deslogado com sucesso.
+              if (isset($_SESSION['logindeslogado'])) {
+                  echo $_SESSION['logindeslogado'];
+                  unset($_SESSION['logindeslogado']);
+              }
+              ?>
         </p>
-
-
-  <!--  
-	<main class="container">
-
-			
-	</main> 
--->
+    </div>
 
 <hr>
 <footer class="container">
