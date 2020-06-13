@@ -12,5 +12,6 @@
 <script src="<?php echo BASEURL; ?>js/bootstrap.min.js"></script>
 
 <script src="<?php echo BASEURL; ?>js/main.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </body>
 </html>

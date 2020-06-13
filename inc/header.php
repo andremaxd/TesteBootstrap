@@ -1,3 +1,13 @@
+
+  <?php  session_start(); 
+  
+    $usr = $_SESSION['usuarioId'];
+
+  if(!isset($usr)){
+        header("Location: index.php");
+    }  
+  ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,10 +38,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="<?php echo BASEURL; ?>index.php" class="navbar-brand">CRUD</a>
+          <a href="<?php echo BASEURL; ?>home.php" class="navbar-brand">CRUD</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">          
+        <ul class="nav navbar-nav">          
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     Clientes <span class="caret"></span>
@@ -42,6 +52,10 @@
                 </ul>
             </li>
           </ul>
+          <span class="navbar-brand" style="float: right"><?php echo $_SESSION['usuarioNome'] ?> 
+            <a href="sair.php"><i class='fas fa-power-off' style='font-size:24px'></i></a>
+          </span>
+         
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
